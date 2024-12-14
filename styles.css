@@ -1,0 +1,287 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Primary */
+  --Blue: hsl(246, 80%, 60%);
+  --Light-orange: hsl(15, 100%, 70%);
+  --Soft-blue: hsl(195, 74%, 62%);
+  --Light-red: hsl(348, 100%, 68%);
+  --Lime-green: hsl(145, 58%, 55%);
+  --Violet: hsl(264, 64%, 52%);
+  --Soft-orange: hsl(43, 84%, 65%);
+
+  /* Neutral */
+  --Very-dark-blue: hsl(226, 43%, 10%);
+  --Dark-blue: hsl(235, 46%, 20%);
+  --Desaturated-blue: hsl(235, 45%, 61%);
+  --Pale-Blue: hsl(236, 100%, 87%);
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--Very-dark-blue);
+  font-family: "Rubik", sans-serif;
+  font-size: 16px;
+}
+
+.container {
+  padding: 2rem;
+}
+
+/* Mobile-first */
+
+/* Profile */
+
+.profile {
+  background-color: var(--Blue);
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
+  align-items: center;
+}
+
+.profile p {
+  font-size: 0.7rem;
+  font-weight: 300;
+  margin-bottom: 0;
+}
+
+.profile h1 {
+  font-size: 1rem;
+  font-weight: 300;
+  padding: 0;
+  margin: 0;
+}
+
+.profile img {
+  max-height: 3rem;
+  width: auto;
+  border: 3px solid white;
+  border-radius: 50%;
+}
+
+/* Activities */
+
+article {
+  margin: 2rem 0;
+}
+
+.timeFrameNav {
+  background-color: var(--Dark-blue);
+  border-radius: 0 0 0.5rem 0.5rem;
+  position: relative;
+  z-index: 1;
+  margin-top: -1rem;
+}
+
+.timeFrameNav li {
+  list-style-type: none;
+  font-size: 0.7rem;
+  padding-top: 1rem;
+  font-weight: 300;
+  opacity: 50%;
+}
+
+.timeFrameNav li:hover {
+  cursor: pointer;
+  opacity: 100%;
+}
+
+p,
+li,
+.name,
+.bi-three-dots,
+.timeFrameNav button {
+  color: white;
+}
+
+.bi-three-dots {
+  opacity: 50%;
+}
+
+.bi-three-dots:hover {
+  opacity: 100%;
+}
+
+.time p {
+  margin-bottom: 0;
+}
+
+.weekly,
+.monthly {
+  display: none;
+}
+
+.color {
+  border-radius: 0.5rem 0.5rem 0 0;
+  display: flex;
+  justify-content: flex-end;
+  max-height: 2.5rem;
+}
+
+.orange {
+  background-color: var(--Light-orange);
+}
+
+.blue {
+  background-color: var(--Soft-blue);
+}
+
+.red {
+  background-color: var(--Light-red);
+}
+
+.green {
+  background-color: var(--Lime-green);
+}
+
+.purple {
+  background-color: var(--Violet);
+}
+
+.yellow {
+  background-color: var(--Soft-orange);
+}
+
+.content {
+  background-color: var(--Dark-blue);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  margin-top: -1rem;
+  z-index: 1;
+}
+
+.content:hover {
+  cursor: pointer;
+  background-color: var(--Desaturated-blue);
+}
+
+.work,
+.play,
+.study,
+.exercise,
+.social,
+.selfcare {
+  display: flex;
+  flex-direction: column;
+}
+
+.time,
+.type {
+  display: flex;
+  justify-content: space-between;
+}
+
+.activity {
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+
+.type,
+.time {
+  display: flex;
+  align-items: center;
+}
+
+.hours {
+  font-size: 1.5rem;
+  font-weight: 300;
+}
+
+.previous {
+  font-size: 0.7rem;
+  font-weight: 300;
+  opacity: 50%;
+}
+
+.nameSm {
+  display: none;
+}
+
+.timeFrameNav button {
+  background-color: transparent;
+  border: none;
+}
+
+/* Desktop Ready */
+
+@media (min-width: 376px) {
+  body {
+    height: 100vh;
+    width: 100%;
+  }
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .cards {
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    height: 100%;
+  }
+
+  .cards article,
+  .profileID {
+    min-width: 11rem;
+    margin: 0;
+    height: 100%;
+  }
+
+  .time,
+  .profile,
+  .timeFrameNav {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .timeFrameNav {
+    margin-top: -1rem;
+    margin-bottom: 0;
+  }
+
+  .name {
+    margin-top: 1rem;
+  }
+
+  .name h1 {
+    display: none;
+  }
+
+  .name .nameSm {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.5rem;
+  }
+
+  .profile,
+  .content {
+    flex-grow: 1;
+  }
+
+  .daily .time {
+    margin-top: 1rem;
+  }
+
+  .daily .hours {
+    font-size: 1.5rem;
+    font-weight: 300;
+  }
+}
