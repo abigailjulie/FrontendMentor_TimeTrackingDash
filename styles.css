@@ -214,6 +214,10 @@ li,
   border: none;
 }
 
+.hidden {
+  display: none;
+}
+
 /* Desktop Ready */
 
 @media (min-width: 376px) {
